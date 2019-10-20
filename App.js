@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 4000||process.env.PORT;
 
 const http = require('http');
 const server = http.Server(app);//app.listen(PORT, () => console.log(`Sockets & Server are running on Port ${PORT}`))
@@ -34,4 +34,4 @@ db.sync({ force: false }).then(async () => {
   app.use("/api", apiRouter);
 });
 
-require("./PublicKeyGen");
+//require("./PublicKeyGen");

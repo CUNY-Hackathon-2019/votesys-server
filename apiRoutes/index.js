@@ -8,6 +8,7 @@ router.get('/all', (req, res) => {
     .catch(err => console.log(err))
 })
 
+
 router.put('/auth', async (req, res) => {
     const data = req.body
     const user = await voters.findOne({
