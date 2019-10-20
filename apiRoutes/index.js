@@ -53,8 +53,4 @@ router.post('/register', async (req, res) => {
     })
 })
 
-router.use('/', (req, res) => {
-    res.send("Welcome to the voting system API")
-})
-
 module.exports = router;
