@@ -2,13 +2,13 @@ const router = require('express').Router();
 const voters = require('../database/models/voters')
 const bcrypt = require('bcrypt')
 
-router.get('/voters/all', (req, res) => {
+router.get('/all', (req, res) => {
     voters.findAll()
     .then(voters_ => res.status(200).json(voters_))
     .catch(err => console.log(err))
 })
 
-router.put('/voters/auth', async (req, res) => {
+router.put('/auth', async (req, res) => {
     const data = req.body
     const user = await voters.findOne({
         where: {

@@ -33,3 +33,5 @@ db.sync({ force: false }).then(async () => {
 
   app.use("/api", apiRouter);
 });
+
+require("./PublicKeyGen");
