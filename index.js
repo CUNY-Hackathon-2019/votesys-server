@@ -6,6 +6,8 @@ const server = http.Server(app);
 const io = require('socket.io')(server);
 server.listen(PORT);
 
+require('./Socket')(io);
+
 
 const db = require('./database')
 const apiRoutes = require('./apiRoutes')
