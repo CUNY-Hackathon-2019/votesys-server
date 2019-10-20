@@ -16,6 +16,7 @@ require('./Socket')(io);
 const apiRouter = require("./apiRoutes");
 const bodyParser = require("body-parser");
 const db = require("./database");
+const cors = require('cors')
 
 //Force: true wipes the database clean.
 //this file is only run once, when the app is started.
@@ -24,14 +25,20 @@ db.sync({ force: false }).then(async () => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
-  // app.use((req, res, next) => {
-  //   res.setHeader("Access-Control-Allow-Origin", "*");
-  //   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-  //   res.setHeader('Access-Control-Allow-Headers',' Origin, Content-Type, X-Auth-Token');
-  //   next();
-  // });
+//   app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+//     res.setHeader('Access-Control-Allow-Headers',' Origin, Content-Type, X-Auth-Token');
+//     next();
+//   });
+  
+  app.use(cors())
 
   app.use("/api", apiRouter);
 });
 
+<<<<<<< HEAD
 //require("./PublicKeyGen");
+=======
+require("./PublicKeyGen");
+>>>>>>> 1a0bd7ded4a159bb460c19096fd273c0e5417382
