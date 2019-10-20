@@ -31,16 +31,18 @@ router.put('/auth', async (req, res) => {
 })
 
 router.post('/register', async (req, res) => {
-    console.log(req)
+    //console.log(req)
     const data = req.body
     const password_ = await bcrypt.hash(data.password, 10).then(pass => pass)
+    const pkGen = require('../PublicKeyGen');
+    const pk = pkGen(); //generate random public key
     let buildAccount = await voters.create({
         idNumber: data.idNumber,
         email: data.email,
         firstName: data.firstName,
         lastName: data.lastName,
         img: data.img,
-        pk: data.pk,
+        pk: pk,
         password: password_
     })
     .then(res_ => {

@@ -18,14 +18,19 @@ fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495
 */
 
 
+
+module.exports = () => {
+    
 const NodeRSA = require('node-rsa');
 const key = new NodeRSA({b: 512});
 //console.log(key);
  
 const text = 'Hello RSA!';
 const encrypted = key.encrypt(text, 'base64');
-console.log('encrypted: ', encrypted);
-const decrypted = key.decrypt(encrypted, 'utf8');
-console.log('decrypted: ', decrypted);
+return encrypted;
+// const decrypted = key.decrypt(encrypted, 'utf8');
+// console.log('decrypted: ', decrypted);
+
+}
 
 
