@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const PORT = 4000||process.env.PORT;
+const PORT = process.env.PORT;
 
 const http = require('http');
-const server = http.Server(app);//app.listen(PORT, () => console.log(`Sockets & Server are running on Port ${PORT}`))
+const server = http.createServer(app);//app.listen(PORT, () => console.log(`Sockets & Server are running on Port ${PORT}`))
 const io = require('socket.io')(server);  //Socket component
 server.listen(PORT);
 console.log(`Sockets & Server are running on Port ${PORT}`);
@@ -37,8 +37,4 @@ db.sync({ force: false }).then(async () => {
   app.use("/api", apiRouter);
 });
 
-<<<<<<< HEAD
 //require("./PublicKeyGen");
-=======
-require("./PublicKeyGen");
->>>>>>> 1a0bd7ded4a159bb460c19096fd273c0e5417382
