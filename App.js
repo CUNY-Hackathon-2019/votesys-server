@@ -25,12 +25,12 @@ db.sync({ force: false }).then(async () => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
-  app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers',' Origin, Content-Type, X-Auth-Token');
-    next();
-  });
+//   app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+//     res.setHeader('Access-Control-Allow-Headers',' Origin, Content-Type, X-Auth-Token');
+//     next();
+//   });
   
   app.use(cors())
 
