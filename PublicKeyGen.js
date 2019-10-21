@@ -23,8 +23,7 @@ module.exports = () => {
     
 const NodeRSA = require('node-rsa');
 const key = new NodeRSA({b: 512});
-//console.log(key);
- 
+// console.log(key); 
 const text = 'Hello RSA!';
 const encrypted = key.encrypt(text, 'base64');
 return encrypted;
